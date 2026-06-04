@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>טיפול לעין יבשה | פרופ' אסף אחירון | MGD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;900&family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue-deep: #0A2540;
+  --blue-mid: #1A4A7A;
+  --blue-bright: #2B7FD4;
+  --blue-light: #5BA8F0;
+  --cyan: #00C2E0;
+  --cyan-soft: #E0F7FD;
+  --white: #FFFFFF;
+  --off-white: #F7FAFD;
+  --gray-100: #EEF3F8;
+  --gray-200: #D8E4F0;
+  --gray-500: #7A96B2;
+  --gray-700: #3A5570;
+  --text-main: #0A2540;
+  --text-muted: #5A7A9A;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Heebo', sans-serif;
+  background: var(--white);
+  color: var(--text-main);
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:200;
+  height: 70px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 4rem;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.7rem;
+  text-decoration: none;
+}
+.nav-logo-icon {
+  width: 38px; height: 38px;
+  background: var(--blue-deep);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-brand { display: flex; flex-direction: column; line-height: 1.1; }
+.nav-brand-main {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.1rem; font-weight: 900;
+  color: var(--blue-deep);
+  letter-spacing: -0.02em;
+}
+.nav-brand-sub {
+  font-size: 0.68rem; font-weight: 500;
+  color: var(--blue-bright);
+  letter-spacing: 0.05em;
+}
+nav ul { display:flex; list-style:none; gap:2.2rem; }
+nav ul a {
+  text-decoration: none;
+  font-size: 0.88rem; font-weight: 500;
+  color: var(--gray-700);
+  transition: color 0.2s;
+}
+nav ul a:hover { color: var(--blue-bright); }
+.btn-nav {
+  background: var(--blue-bright);
+  color: #fff !important;
+  padding: 0.5rem 1.4rem !important;
+  border-radius: 8px;
+  font-weight: 600 !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.btn-nav:hover { background: var(--blue-deep) !important; transform: translateY(-1px) !important; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(150deg, #F0F7FF 0%, #E8F3FD 40%, #EAF8FC 100%);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  padding: 8rem 4rem 5rem;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Grid lines decoration */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(43,127,212,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43,127,212,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -200px; left: -100px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,194,224,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(43,127,212,0.1);
+  border: 1px solid rgba(43,127,212,0.25);
+  color: var(--blue-bright);
+  font-size: 0.78rem; font-weight: 700;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+.badge-dot {
+  width: 6px; height: 6px;
+  background: var(--cyan);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100%{ opacity:1; transform:scale(1); }
+  50%{ opacity:0.5; transform:scale(1.4); }
+}
+
+.hero-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--blue-deep);
+  margin-bottom: 0.6rem;
+}
+.hero-title .t-cyan { color: var(--blue-bright); }
+
+.hero-prof {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  background: var(--blue-deep);
+  color: #fff;
+  padding: 0.55rem 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 1.6rem;
+  font-size: 0.95rem;
+}
+.hero-prof strong { font-weight: 700; }
+.hero-prof span { color: var(--blue-light); font-size: 0.82rem; }
+
+.hero-desc {
+  font-size: 1rem; color: var(--text-muted);
+  line-height: 1.85; margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--blue-bright);
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700; font-size: 0.95rem;
+  transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(43,127,212,0.3);
+}
+.btn-primary:hover { background: var(--blue-deep); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(43,127,212,0.35); }
+
+.btn-ghost {
+  color: var(--blue-bright);
+  padding: 0.85rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600; font-size: 0.95rem;
+  border: 1.5px solid var(--gray-200);
+  transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-ghost:hover { border-color: var(--blue-bright); background: rgba(43,127,212,0.05); }
+
+/* Hero stats bar */
+.hero-stats {
+  display: flex; gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-200);
+}
+.stat-item { }
+.stat-num {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.8rem; font-weight: 900;
+  color: var(--blue-deep);
+  line-height: 1;
+}
+.stat-num span { color: var(--blue-bright); }
+.stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+/* ─── HERO VISUAL ─── */
+.hero-visual {
+  display: flex; justify-content: center; align-items: center;
+  position: relative;
+}
+
+/* Slit lamp SVG illustration */
+.slit-lamp-wrap {
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-12px); }
+}
+
+/* Scan line animation on the eye panel */
+.scan-line {
+  position: absolute;
+  top: 105px; left: 140px;
+  width: 120px; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,194,224,0.9), transparent);
+  animation: scan 3s ease-in-out infinite;
+  border-radius: 2px;
+}
+@keyframes scan {
+  0%{ top:105px; opacity:0; }
+  10%{ opacity:1; }
+  90%{ opacity:1; }
+  100%{ top:195px; opacity:0; }
+}
+
+/* ─── SECTION BASE ─── */
+section { padding: 6rem 4rem; }
+
+.section-label {
+  font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--blue-bright);
+  font-weight: 700; margin-bottom: 0.6rem; display: block;
+}
+.section-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 900; line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--blue-deep);
+  margin-bottom: 0.8rem;
+}
+.section-sub {
+  color: var(--text-muted);
+  font-size: 1rem; line-height: 1.85;
+  max-width: 580px;
+}
+.rule {
+  width: 48px; height: 3px;
+  background: var(--cyan);
+  border-radius: 2px;
+  margin: 1rem 0 2rem;
+}
+
+/* ─── MGD SECTION ─── */
+.mgd-section { background: var(--off-white); }
+
+.mgd-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start; margin-top: 3rem;
+}
+.mgd-text p {
+  color: var(--text-muted); line-height: 1.9;
+  margin-bottom: 1.1rem; font-size: 0.97rem;
+}
+.mgd-text strong { color: var(--blue-deep); font-weight: 600; }
+
+.info-cards { display: grid; gap: 0.9rem; }
+.info-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.3rem 1.5rem;
+  border: 1px solid var(--gray-200);
+  display: flex; gap: 1rem; align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+.info-card:hover {
+  box-shadow: 0 8px 28px rgba(10,37,64,0.08);
+  transform: translateY(-2px);
+  border-color: var(--blue-bright);
+}
+.card-icon-wrap {
+  width: 44px; height: 44px; flex-shrink:0;
+  background: var(--gray-100);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.card-body h4 { font-weight: 700; font-size: 0.9rem; color: var(--blue-deep); margin-bottom: 0.25rem; }
+.card-body p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+
+/* ─── SYMPTOMS ─── */
+.symptoms-section { background: #fff; }
+.sym-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-top: 3rem;
+}
+.sym-card {
+  background: var(--off-white);
+  border: 1px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 1.3rem 1.4rem;
+  display: flex; align-items: center; gap: 1rem;
+  transition: all 0.2s;
+}
+.sym-card:hover {
+  background: #fff;
+  border-color: var(--blue-bright);
+  box-shadow: 0 4px 20px rgba(43,127,212,0.1);
+  transform: translateY(-2px);
+}
+.sym-icon-wrap {
+  width: 40px; height: 40px; flex-shrink:0;
+  background: rgba(43,127,212,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.sym-card span { font-size: 0.88rem; font-weight: 500; color: var(--blue-deep); line-height: 1.4; }
+
+/* ─── TECHNOLOGY ─── */
+.tech-section {
+  background: var(--blue-deep);
+  position: relative; overflow: hidden;
+}
+.tech-section::before {
+  content: '';
+  position: absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.tech-section .section-label { color: var(--cyan); }
+.tech-section .section-title { color: #fff; }
+.tech-section .section-sub { color: rgba(255,255,255,0.6); }
+.tech-section .rule { background: var(--cyan); }
+
+.tech-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem; margin-top: 3rem;
+}
+.tech-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px;
+  padding: 2rem;
+  transition: background 0.2s, border-color 0.2s;
+  position: relative; overflow: hidden;
+}
+.tech-card::before {
+  content: '';
+  position: absolute; top:0; right:0;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle at top right, rgba(0,194,224,0.12), transparent 70%);
+}
+.tech-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(0,194,224,0.35);
+}
+.tech-icon-wrap {
+  width: 52px; height: 52px;
+  background: rgba(0,194,224,0.15);
+  border: 1px solid rgba(0,194,224,0.3);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.tech-card h3 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.15rem; font-weight: 800;
+  color: #fff; margin-bottom: 0.7rem;
+}
+.tech-card p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.8; }
+
+/* ─── TREATMENT STEPS ─── */
+.treatment-section { background: var(--off-white); }
+
+.steps-timeline { margin-top: 3.5rem; display: grid; gap: 1.2rem; }
+.step-row {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: 18px;
+  padding: 2rem 2.2rem;
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 1.8rem;
+  align-items: start;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.step-row:hover {
+  box-shadow: 0 8px 32px rgba(10,37,64,0.07);
+  border-color: var(--blue-bright);
+}
+.step-num-col { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.step-num {
+  width: 48px; height: 48px;
+  background: var(--blue-bright);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.3rem; font-weight: 900; color: #fff;
+}
+.step-connector {
+  width: 2px; height: 30px;
+  background: var(--gray-200);
+  border-radius: 2px;
+}
+.step-row:last-child .step-connector { display: none; }
+.step-tag {
+  display: inline-block;
+  background: var(--cyan-soft);
+  color: var(--blue-mid);
+  font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 0.2rem 0.8rem; border-radius: 50px;
+  margin-bottom: 0.6rem;
+}
+.step-row h3 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.2rem; font-weight: 800;
+  color: var(--blue-deep); margin-bottom: 0.5rem;
+}
+.step-row p { font-size: 0.93rem; color: var(--text-muted); line-height: 1.8; }
+.step-row p strong { color: var(--blue-deep); font-weight: 600; }
+
+/* Info note */
+.info-note {
+  margin-top: 2rem;
+  background: rgba(43,127,212,0.07);
+  border: 1px solid rgba(43,127,212,0.2);
+  border-radius: 14px;
+  padding: 1.3rem 1.8rem;
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.info-note-icon { flex-shrink:0; margin-top:0.1rem; }
+.info-note p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; }
+.info-note p strong { color: var(--blue-deep); }
+
+/* ─── TEAM ─── */
+.team-section { background: #fff; }
+.team-card {
+  display: grid; grid-template-columns: 260px 1fr;
+  gap: 4rem; align-items: center;
+  background: var(--off-white);
+  border: 1px solid var(--gray-200);
+  border-radius: 24px;
+  padding: 3rem;
+  margin-top: 3rem;
+}
+.team-avatar {
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid));
+  border-radius: 18px;
+  aspect-ratio: 1;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.team-avatar-inner {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+}
+.team-avatar-abbr {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 3.5rem; font-weight: 900; color: rgba(255,255,255,0.2);
+  line-height: 1; letter-spacing: -0.04em;
+}
+.team-avatar-line {
+  width: 50px; height: 2px;
+  background: rgba(0,194,224,0.5); border-radius:2px;
+}
+.team-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
+.team-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: rgba(43,127,212,0.1);
+  color: var(--blue-mid);
+  font-size: 0.78rem; font-weight: 600;
+  padding: 0.3rem 0.8rem; border-radius: 8px;
+}
+.team-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.8rem; font-weight: 900;
+  color: var(--blue-deep); margin-bottom: 0.3rem;
+}
+.team-role { font-size: 0.9rem; color: var(--blue-bright); font-weight: 600; margin-bottom: 1rem; }
+.team-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; }
+
+/* ─── CTA ─── */
+.cta-section {
+  background: linear-gradient(135deg, var(--blue-bright) 0%, var(--blue-mid) 60%, var(--blue-deep) 100%);
+  text-align: center;
+  padding: 6rem 4rem;
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+.cta-section h2 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(2rem,4vw,3rem); font-weight: 900;
+  color: #fff; margin-bottom: 1rem;
+  letter-spacing: -0.025em; position: relative;
+}
+.cta-section p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem; margin-bottom: 2.5rem;
+  line-height: 1.8; position: relative;
+}
+.btn-white {
+  background: #fff; color: var(--blue-deep);
+  padding: 1rem 2.5rem; border-radius: 12px;
+  text-decoration: none; font-weight: 700; font-size: 0.97rem;
+  transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+.btn-white:hover { background: var(--blue-deep); color: #fff; transform: translateY(-3px); box-shadow: 0 8px 36px rgba(0,0,0,0.2); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--blue-deep);
+  color: rgba(255,255,255,0.45);
+  text-align: center; padding: 1.8rem;
+  font-size: 0.82rem;
+}
+footer strong { color: var(--cyan); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.fade-up { animation: fadeUp 0.7s ease forwards; }
+.d1 { animation-delay:0.1s; opacity:0; }
+.d2 { animation-delay:0.25s; opacity:0; }
+.d3 { animation-delay:0.4s; opacity:0; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 960px) {
+  .hero { grid-template-columns:1fr; padding:8rem 2rem 4rem; }
+  .hero-visual { display:none; }
+  .mgd-grid, .tech-grid { grid-template-columns:1fr; gap:2rem; }
+  .sym-grid { grid-template-columns:1fr 1fr; }
+  .team-card { grid-template-columns:1fr; }
+  nav ul { display:none; }
+  section { padding:4rem 2rem; }
+}
+@media (max-width:600px){
+  .sym-grid { grid-template-columns:1fr; }
+  .hero-stats { flex-wrap:wrap; gap:1.2rem; }
+  nav { padding:0 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <ellipse cx="11" cy="11" rx="9" ry="5.5" stroke="white" stroke-width="1.5"/>
+        <circle cx="11" cy="11" r="3.5" fill="white" opacity="0.9"/>
+        <circle cx="11" cy="11" r="1.5" fill="#0A2540"/>
+      </svg>
+    </div>
+    <div class="nav-brand">
+      <span class="nav-brand-main">טיפול לעין יבשה</span>
+      <span class="nav-brand-sub">MGD · Meibomian Gland Treatment</span>
+    </div>
+  </a>
+  <ul>
+    <li><a href="#mgd">מהו MGD?</a></li>
+    <li><a href="#symptoms">סימפטומים</a></li>
+    <li><a href="#technology">טכנולוגיה</a></li>
+    <li><a href="#treatment">הטיפול</a></li>
+    <li><a href="#team">הצוות</a></li>
+    <li><a href="#contact" class="btn-nav">קביעת תור</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge fade-up">
+      <div class="badge-dot"></div>
+      טיפול מומחה לעין יבשה ו-MGD
+    </div>
+    <h1 class="hero-title fade-up d1">
+      טיפול מקצועי<br>לבלוטות<br>
+      <span class="t-cyan">מיבומיאן</span>
+    </h1>
+
+    <div class="hero-prof fade-up d2">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <circle cx="9" cy="6" r="3.5" stroke="#5BA8F0" stroke-width="1.4"/>
+        <path d="M2 16c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="#5BA8F0" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <strong>פרופ' אסף אחירון</strong>
+        <br><span>רופא מומחה עיניים | מנהל רפואי</span>
+      </div>
+    </div>
+
+    <p class="hero-desc fade-up d2">
+      אי-תפקוד בלוטות מיבומיאן (MGD) הוא הגורם השכיח ביותר לעין יבשה כרונית.
+      הטיפול מבוצע על ידי אופטומטריסט מוסמך, תחת פיקוח וליווי צמוד של פרופ' אסף אחירון,
+      במכשיר מנורת הסדק (Slit Lamp) הייעודי.
+    </p>
+
+    <div class="hero-actions fade-up d3">
+      <a href="#contact" class="btn-primary">
+        קביעת תור לטיפול
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#mgd" class="btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v4M8 5.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        מידע על MGD
+      </a>
+    </div>
+
+    <div class="hero-stats fade-up d3">
+      <div class="stat-item">
+        <div class="stat-num">70<span>%</span></div>
+        <div class="stat-label">מחולי עין יבשה סובלים מ-MGD</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">שלבי טיפול מובנים</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">Slit<span> Lamp</span></div>
+        <div class="stat-label">ביצוע תחת מנורת סדק</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slit Lamp Illustration -->
+  <div class="hero-visual fade-up d2">
+    <div class="slit-lamp-wrap">
+      <div class="scan-line"></div>
+      <svg width="400" height="420" viewBox="0 0 400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background glow -->
+        <circle cx="200" cy="200" r="180" fill="rgba(43,127,212,0.04)"/>
+        <!-- Slit lamp base -->
+        <rect x="155" y="340" width="90" height="14" rx="7" fill="#D8E4F0"/>
+        <rect x="178" y="310" width="44" height="34" rx="6" fill="#EEF3F8" stroke="#D8E4F0" stroke-width="1.5"/>
+        <!-- Arm vertical -->
+        <rect x="193" y="200" width="14" height="115" rx="7" fill="#D8E4F0"/>
+        <!-- Arm horizontal -->
+        <rect x="110" y="193" width="130" height="14" rx="7" fill="#D8E4F0"/>
+        <!-- Main head body -->
+        <rect x="80" y="130" width="80" height="120" rx="16" fill="#EEF3F8" stroke="#D8E4F0" stroke-width="1.5"/>
+        <!-- Slit beam emitter -->
+        <rect x="152" y="158" width="22" height="60" rx="8" fill="#DDEEFF" stroke="#2B7FD4" stroke-width="1.5"/>
+        <!-- Beam light -->
+        <path d="M162 170 L185 185 L162 200 Z" fill="rgba(0,194,224,0.3)" opacity="0.8"/>
+        <!-- Cyan beam line -->
+        <line x1="162" y1="185" x2="265" y2="185" stroke="#00C2E0" stroke-width="2" stroke-dasharray="4 3" opacity="0.7"/>
+        <!-- Eyepiece -->
+        <ellipse cx="115" cy="125" rx="22" ry="28" fill="#D0DFF0" stroke="#2B7FD4" stroke-width="1.5"/>
+        <ellipse cx="115" cy="125" rx="14" ry="18" fill="#A0C0E8"/>
+        <ellipse cx="115" cy="125" rx="8" ry="11" fill="#2B7FD4" opacity="0.9"/>
+        <ellipse cx="115" cy="125" rx="3" ry="4" fill="#0A2540"/>
+        <!-- Lens focus knob -->
+        <circle cx="82" cy="190" r="12" fill="#D8E4F0" stroke="#B8CCE0" stroke-width="1.5"/>
+        <circle cx="82" cy="190" r="7" fill="#EEF3F8"/>
+        <!-- Eye being examined (right side) -->
+        <g transform="translate(255,155)">
+          <!-- Eyelid frame -->
+          <path d="M0 30 Q50 -10 100 30" fill="#FAF6EE" stroke="#D8C8B0" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M0 45 Q50 80 100 45" fill="none" stroke="#D8C8B0" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- Eye white -->
+          <path d="M5 38 Q50 10 95 38 Q50 65 5 38Z" fill="white"/>
+          <!-- Iris -->
+          <circle cx="50" cy="38" r="20" fill="#5A8FD0" opacity="0.9"/>
+          <circle cx="50" cy="38" r="13" fill="#2B5FA0"/>
+          <circle cx="50" cy="38" r="7" fill="#0A2540"/>
+          <circle cx="55" cy="33" r="3.5" fill="rgba(255,255,255,0.55)"/>
+          <!-- Scan highlight on eye -->
+          <rect x="10" y="28" width="80" height="2" rx="1" fill="rgba(0,194,224,0.4)" opacity="0.8"/>
+          <!-- Eyelid markers (meibomian) -->
+          <g opacity="0.7">
+            <rect x="18" y="6" width="5" height="14" rx="2.5" fill="#B8D0F0" stroke="#8AAED8" stroke-width="0.8"/>
+            <rect x="28" y="4" width="5" height="16" rx="2.5" fill="#B8D0F0" stroke="#8AAED8" stroke-width="0.8"/>
+            <rect x="38" y="2" width="5" height="18" rx="2.5" fill="#B8D0F0" stroke="#8AAED8" stroke-width="0.8"/>
+            <rect x="48" y="2" width="5" height="18" rx="2.5" fill="#B8D0F0" stroke="#8AAED8" stroke-width="0.8"/>
+            <rect x="58" y="2" width="5" height="18" rx="2.5" fill="#B8D0F0" stroke="#8AAED8" stroke-width="0.8"/>
+            <rect x="68" y="4" width="5" height="16" rx="2.5" fill="#D46050" stroke="#B84030" stroke-width="0.8"/>
+            <rect x="78" y="6" width="5" height="14" rx="2.5" fill="#B8D0F0" stroke="#8AAED8" stroke-width="0.8"/>
+          </g>
+          <!-- Blocked label -->
+          <circle cx="70" cy="4" r="4" fill="#D46050"/>
+          <text x="80" y="1" font-family="Heebo,sans-serif" font-size="9" fill="#D46050" font-weight="700">חסום</text>
+        </g>
+
+        <!-- Data HUD lines -->
+        <line x1="330" y1="160" x2="360" y2="140" stroke="rgba(43,127,212,0.3)" stroke-width="1"/>
+        <text x="363" y="138" font-family="Heebo,sans-serif" font-size="9" fill="rgba(43,127,212,0.8)" font-weight="600">MGD Grade II</text>
+
+        <line x1="350" y1="200" x2="370" y2="200" stroke="rgba(0,194,224,0.3)" stroke-width="1"/>
+        <text x="373" y="204" font-family="Heebo,sans-serif" font-size="9" fill="rgba(0,194,224,0.8)" font-weight="600">TBUT: 3.2s</text>
+
+        <!-- Corner bracket decorations -->
+        <path d="M240 140 L240 148 L248 148" stroke="rgba(43,127,212,0.3)" stroke-width="1.5" fill="none"/>
+        <path d="M375 140 L375 148 L367 148" stroke="rgba(43,127,212,0.3)" stroke-width="1.5" fill="none"/>
+        <path d="M240 230 L240 222 L248 222" stroke="rgba(43,127,212,0.3)" stroke-width="1.5" fill="none"/>
+        <path d="M375 230 L375 222 L367 222" stroke="rgba(43,127,212,0.3)" stroke-width="1.5" fill="none"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MGD ═══ -->
+<section id="mgd" class="mgd-section">
+  <span class="section-label">הבנת המצב</span>
+  <h2 class="section-title">מהו MGD – אי-תפקוד<br>בלוטות מיבומיאן?</h2>
+  <div class="rule"></div>
+  <div class="mgd-grid">
+    <div class="mgd-text">
+      <p>בלוטות מיבומיאן (Meibomian Glands) הן בלוטות שומניות זעירות הממוקמות בתוך עפעפי העין – כ-25–40 בלוטות בעפעף העליון וכ-20–30 בתחתון. <strong>תפקידן החיוני</strong> הוא הפרשת שכבת שמן (מיבום) על פני קרום הדמע, המונעת את התאדפות הדמעות ושומרת על לחות יציבה של פני העין.</p>
+      <p>כאשר הבלוטות <strong>נסתמות או אינן מפרישות כראוי</strong>, השכבה השמנית של הדמע נפגמת. הדמעות מתאדות מהר מדי, פני העין יבשים ועצבניים – זהו מצב הידוע בשם <strong>Meibomian Gland Dysfunction (MGD)</strong>.</p>
+      <p>MGD הוא <strong>הגורם השכיח ביותר לעין יבשה</strong> ומשפיע על איכות החיים, ראייה, נוחות יומיומית ואף על תוצאות ניתוחי עיניים. ללא טיפול, הבלוטות עלולות להתנוון לצמיתות.</p>
+    </div>
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="card-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M11 3C11 3 5 7 5 12a6 6 0 0012 0c0-5-6-9-6-9z" stroke="#2B7FD4" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M11 14v-3M11 17v.5" stroke="#2B7FD4" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h4>מה קורה בתוך הבלוטה?</h4>
+          <p>השומן (מיבום) מתעבה, הופך לסמיך ומאבד נזילות. הצינוריות הדקות נסתמות ומצטברות הפרשות.</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <ellipse cx="11" cy="11" rx="8.5" ry="5" stroke="#2B7FD4" stroke-width="1.6"/>
+            <circle cx="11" cy="11" r="3" fill="#2B7FD4" opacity="0.2" stroke="#2B7FD4" stroke-width="1.5"/>
+            <path d="M14 8.5l3.5-2M8 8.5L4.5 6.5" stroke="#2B7FD4" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h4>השפעה על פני העין</h4>
+          <p>ללא שכבת השמן, הדמעות מתאדות תוך 1–2 שניות (במקום 10+). הקרנית חשופה לדלקת ואי-נוחות.</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M11 3v2M11 17v2M4.2 5.6l1.4 1.4M15.4 14.8l1.4 1.4M3 11h2M17 11h2M5.6 16.4l1.4-1.4M14.8 6.6l1.4-1.4" stroke="#2B7FD4" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="11" cy="11" r="3.5" stroke="#2B7FD4" stroke-width="1.6"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h4>פרוגרסיבי ללא טיפול</h4>
+          <p>ללא טיפול, הבלוטות עלולות להתנוון לצמיתות. גילוי מוקדם ופרוטוקול טיפול שיטתי – חיוניים.</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M3 19l4-4 4 4 4-4 4 4" stroke="#2B7FD4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 12l4-4 4 4 4-4 4 4" stroke="#2B7FD4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h4>שכיחות גבוהה</h4>
+          <p>עד 70% מחולי עין יבשה סובלים מ-MGD – רבים מהם ללא אבחון נכון ומתאים.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SYMPTOMS ═══ -->
+<section id="symptoms" class="symptoms-section">
+  <span class="section-label">כיצד לזהות</span>
+  <h2 class="section-title">סימפטומים של MGD</h2>
+  <div class="rule"></div>
+  <p class="section-sub">הסימפטומים מופיעים בהדרגה ומיוחסים בטעות לעייפות. אם אתם חווים אחד או יותר מהתסמינים הבאים – מומלץ לפנות לבדיקה.</p>
+  <div class="sym-grid">
+
+    <div class="sym-card">
+      <div class="sym-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 2C10 2 4 6.5 4 11a6 6 0 0012 0c0-4.5-6-9-6-9z" stroke="#2B7FD4" stroke-width="1.5"/>
+          <path d="M7 13c.8 1.2 2 2 3 2s2.2-.8 3-2" stroke="#2B7FD4" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span>תחושת צריבה ואי-נוחות בעיניים</span>
+    </div>
+
+    <div class="sym-card">
+      <div class="sym-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="3" stroke="#2B7FD4" stroke-width="1.5"/>
+          <path d="M10 4v2M10 14v2M4 10h2M14 10h2M5.9 5.9l1.4 1.4M12.7 12.7l1.4 1.4M5.9 14.1l1.4-1.4M12.7 7.3l1.4-1.4" stroke="#2B7FD4" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span>רגישות יתר לאור ולנצנוצים</span>
+    </div>
+
+    <div class="sym-card">
+      <div class="sym-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M2 10c0 0 3.5-6 8-6s8 6 8 6-3.5 6-8 6-8-6-8-6z" stroke="#2B7FD4" stroke-width="1.5"/>
+          <circle cx="10" cy="10" r="3" stroke="#2B7FD4" stroke-width="1.5"/>
+          <path d="M10 10l2.5 2.5" stroke="#2B7FD4" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+      </div>
+      <span>טשטוש ראייה שמשתנה בהבטה</span>
+    </div>
+
+    <div class="sym-card">
+      <div class="sym-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 3v3M6 4.3l1.5 2.6M4.3 7l2.6 1.5" stroke="#2B7FD4" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+          <path d="M3 13.5C3 10.5 6.1 8 10 8s7 2.5 7 5.5" stroke="#2B7FD4" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M6 16.5c0-2.2 1.8-4 4-4s4 1.8 4 4" stroke="#2B7FD4" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span>כבדות עפעפיים, בוקר קשה</span>
+    </div>
+
+    <div class="sym-card">
+      <div class="sym-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M5 16c0-2.8 2.2-5 5-5s5 2.2 5 5" stroke="#2B7FD4" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="10" cy="8" r="3" stroke="#2B7FD4" stroke-width="1.5"/>
+          <path d="M14 5l2-1.5M16 8h2" stroke="#2B7FD4" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <span>אדמומיות וגירוי בקצות העפעפיים</span>
+    </div>
+
+    <div class="sym-card">
+      <div class="sym-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 5c-3 0-7 2.5-7 5s4 5 7 5 7-2.5 7-5-4-5-7-5z" stroke="#2B7FD4" stroke-width="1.5"/>
+          <path d="M8 9l-1.5 3M12 9l1.5 3" stroke="#2B7FD4" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="10" cy="10" r="1.5" fill="#2B7FD4" opacity="0.4"/>
+        </svg>
+      </div>
+      <span>עין יבשה כרונית</span>
+    </div>
+
+    <div class="sym-card">
+      <div class="sym-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 4c0 0-5 3-5 7a5 5 0 0010 0c0-4-5-7-5-7z" stroke="#2B7FD4" stroke-width="1.5"/>
+          <path d="M10 10v3" stroke="#2B7FD4" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="10" cy="15.5" r="0.8" fill="#2B7FD4"/>
+        </svg>
+      </div>
+      <span>דמעות מוגברות (פרדוקסלי)</span>
+    </div>
+
+    <div class="sym-card">
+      <div class="sym-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <rect x="3" y="4" width="14" height="10" rx="2" stroke="#2B7FD4" stroke-width="1.5"/>
+          <path d="M7 17h6M10 14v3" stroke="#2B7FD4" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M6 8h8M6 11h5" stroke="#2B7FD4" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <span>החמרה מול מסכים ואוויר מזוגן</span>
+    </div>
+
+    <div class="sym-card">
+      <div class="sym-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 3a7 7 0 100 14A7 7 0 0010 3z" stroke="#2B7FD4" stroke-width="1.5"/>
+          <path d="M10 7v4l3 1.5" stroke="#2B7FD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span>גוף זר – תחושת "חול" בעין</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ TECHNOLOGY ═══ -->
+<section id="technology" class="tech-section">
+  <span class="section-label">הטכנולוגיה שלנו</span>
+  <h2 class="section-title" style="color:#fff">ביצוע תחת מנורת סדק<br>– Slit Lamp</h2>
+  <div class="rule"></div>
+  <p class="section-sub">הטיפול מבוצע בסביבת עין רפואית מלאה. מנורת הסדק (Slit Lamp) מספקת הגדלה ותאורה קלינית מדויקות, המאפשרות פיקוח מיטבי על כל שלב.</p>
+
+  <div class="tech-grid">
+    <div class="tech-card">
+      <div class="tech-icon-wrap">
+        <!-- Slit lamp icon SVG -->
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect x="10" y="16" width="6" height="8" rx="3" fill="rgba(0,194,224,0.4)" stroke="#00C2E0" stroke-width="1.3"/>
+          <rect x="5" y="9" width="6" height="10" rx="3" stroke="#00C2E0" stroke-width="1.3"/>
+          <circle cx="8" cy="6" r="4" stroke="#00C2E0" stroke-width="1.3"/>
+          <line x1="11" y1="14" x2="20" y2="14" stroke="#00C2E0" stroke-width="1.3" stroke-dasharray="2 2"/>
+          <circle cx="21" cy="14" r="3" stroke="#00C2E0" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <h3>Slit Lamp – מנורת סדק</h3>
+      <p>מכשיר קליני מובחר המספק הגדלה של עד ×40 ותאורה מדויקת לאזור העפעף ופתחי הבלוטות. מאפשר לאופטומטריסט לבצע את הסחיטה בדיוק גבוה ובמעקב ויזואלי מלא.</p>
+    </div>
+
+    <div class="tech-card">
+      <div class="tech-icon-wrap">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <circle cx="13" cy="13" r="9" stroke="#00C2E0" stroke-width="1.3"/>
+          <path d="M13 7v6l4 2" stroke="#00C2E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="13" cy="4" r="1.5" fill="#00C2E0"/>
+          <circle cx="22" cy="13" r="1.5" fill="#00C2E0"/>
+        </svg>
+      </div>
+      <h3>אילחוש מקומי לנוחות מרבית</h3>
+      <p>לפני הטיפול מיושמות <strong style="color:#E0F7FD">טיפות לאילחוש מקומי</strong> וג'ל ייעודי על פני העפעף. האילחוש תורם משמעותית להפחתת אי-הנוחות ומאפשר הליך קל ונוח ככל האפשר עבור המטופל.</p>
+    </div>
+
+    <div class="tech-card">
+      <div class="tech-icon-wrap">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M5 13c0 0 3-5 8-5s8 5 8 5-3 5-8 5-8-5-8-5z" stroke="#00C2E0" stroke-width="1.3"/>
+          <circle cx="13" cy="13" r="3.5" stroke="#00C2E0" stroke-width="1.3"/>
+          <path d="M18 8l4-2M18 18l4 2" stroke="#00C2E0" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <h3>ביצוע על ידי אופטומטריסט מוסמך</h3>
+      <p>הפרוצדורה מבוצעת על ידי אופטומטריסט בעל הכשרה ספציפית בטיפול MGD, תחת פיקוח וליווי צמוד של פרופ' אסף אחירון לאורך כל ההליך.</p>
+    </div>
+
+    <div class="tech-card">
+      <div class="tech-icon-wrap">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect x="4" y="6" width="18" height="14" rx="3" stroke="#00C2E0" stroke-width="1.3"/>
+          <path d="M8 11h10M8 15h6" stroke="#00C2E0" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="19" cy="15" r="2.5" fill="rgba(0,194,224,0.3)" stroke="#00C2E0" stroke-width="1.1"/>
+          <path d="M19 14v2M18 15h2" stroke="#00C2E0" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>תיעוד ומעקב קליני</h3>
+      <p>כל טיפול מתועד: מצב הבלוטות לפני ואחרי, תוצאות הסחיטה ותכנית המשך. המעקב הקליני מאפשר ניהול אופטימלי של מצב ה-MGD לאורך זמן.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TREATMENT ═══ -->
+<section id="treatment" class="treatment-section">
+  <span class="section-label">פרוטוקול הטיפול</span>
+  <h2 class="section-title">ארבעת שלבי הטיפול</h2>
+  <div class="rule"></div>
+  <p class="section-sub">פרוטוקול מובנה ומדויק – מהכנת הבלוטות ועד ניקוזן המלא, תחת פיקוח רפואי מקצועי.</p>
+
+  <div class="steps-timeline">
+    <div class="step-row">
+      <div class="step-num-col">
+        <div class="step-num">1</div>
+        <div class="step-connector"></div>
+      </div>
+      <div>
+        <div class="step-tag">הכנה</div>
+        <h3>מסיכת חימום ומסאז' לעיניים</h3>
+        <p>השלב הראשון הוא יישום <strong>מסיכת חימום ייעודית</strong> על העפעפיים. החום הנדוס מרכך את שומן המיבום המתועב שבתוך הבלוטות הסתומות ומשיב לו נזילות. לאחר מכן מבוצע <strong>מסאז' עדין</strong> לאורך קצות העפעפיים להתגייסות ההפרשות ולהכנת הבלוטות לשלב הניקוז.</p>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num-col">
+        <div class="step-num">2</div>
+        <div class="step-connector"></div>
+      </div>
+      <div>
+        <div class="step-tag">הרדמה</div>
+        <h3>אילחוש בטיפות וג'ל ייעודי</h3>
+        <p>לפני שלב הסחיטה מיושמות <strong>טיפות לאילחוש מקומי</strong> וג'ל ייעודי על פני העפעף ובקצה הפנימי שלו. הטיפות והג'ל תורמים משמעותית להפחתת אי-הנוחות ומאפשרים <strong>הליך קל ונוח</strong> למטופל, תוך מתן אפשרות לאופטומטריסט לפעול בדיוק ובנחת.</p>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num-col">
+        <div class="step-num">3</div>
+        <div class="step-connector"></div>
+      </div>
+      <div>
+        <div class="step-tag">ניקוז – ליבת הטיפול</div>
+        <h3>סחיטת בלוטות מיבומיאן תחת מנורת סדק</h3>
+        <p>תחת הגדלת מנורת הסדק (Slit Lamp), מבצע האופטומטריסט <strong>לחיצות עדינות ומדודות</strong> לאורך קצות העפעפיים בשימוש במקלוני כותנה ייעודיים. הלחץ פותח את פיות הבלוטות הסתומות ומאפשר לשומן החסום להינגר החוצה. הפרוצדורה מבוצעת על <strong>שני העפעפיים – עליון ותחתון – בכל עין</strong>, תחת פיקוח פרופ' אחירון.</p>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num-col">
+        <div class="step-num">4</div>
+      </div>
+      <div>
+        <div class="step-tag">לאחר הטיפול</div>
+        <h3>הנחיות ותכנית תחזוקה ביתית</h3>
+        <p>בתום הטיפול מקבל המטופל <strong>הנחיות אחרי הטיפול</strong> הכוללות שגרת תחזוקה ביתית – חימום ועיסוי עצמי יומיומי – לשמירה על פתיחות הבלוטות. מומלץ לבצע טיפולי מעקב תקופתיים בהתאם לחומרת המצב ולמנוע סתימה חוזרת.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-note">
+    <div class="info-note-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <circle cx="11" cy="11" r="9" stroke="#2B7FD4" stroke-width="1.5"/>
+        <path d="M11 10v5M11 8v.5" stroke="#2B7FD4" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p><strong>חשוב לדעת:</strong> סחיטת בלוטות מיבומיאן אינה טיפול חד-פעמי. רוב המטופלים מדווחים על שיפור משמעותי לאחר הסשן הראשון, אך לתוצאות מיטביות ולטווח הארוך מומלץ על <strong>סדרת טיפולים</strong> ושגרת תחזוקה ביתית יומיומית.</p>
+  </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section id="team" class="team-section">
+  <span class="section-label">הצוות הרפואי</span>
+  <h2 class="section-title">מובילים בתחום עין יבשה</h2>
+  <div class="rule"></div>
+  <div class="team-card">
+    <div class="team-avatar">
+      <div class="team-avatar-inner">
+        <div class="team-avatar-abbr">א״א</div>
+        <div class="team-avatar-line"></div>
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="12" r="7" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+          <path d="M5 32c0-7.2 5.8-13 13-13s13 5.8 13 13" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+    <div>
+      <div class="team-badges">
+        <span class="team-badge">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#2B7FD4" stroke-width="1.2"/><path d="M4 6l1.5 1.5L8 4" stroke="#2B7FD4" stroke-width="1.2" stroke-linecap="round"/></svg>
+          פרופסור מן המניין
+        </span>
+        <span class="team-badge">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#2B7FD4" stroke-width="1.2"/><path d="M4 6l1.5 1.5L8 4" stroke="#2B7FD4" stroke-width="1.2" stroke-linecap="round"/></svg>
+          רופא מומחה עיניים
+        </span>
+        <span class="team-badge">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#2B7FD4" stroke-width="1.2"/><path d="M4 6l1.5 1.5L8 4" stroke="#2B7FD4" stroke-width="1.2" stroke-linecap="round"/></svg>
+          מומחה MGD ועין יבשה
+        </span>
+      </div>
+      <h3 class="team-title">פרופ' אסף אחירון</h3>
+      <p class="team-role">מנהל רפואי | מכון עין יבשה</p>
+      <p class="team-desc">
+        פרופ' אסף אחירון הוא רופא מומחה לרפואת עיניים ובעל ניסיון נרחב בתחום עין יבשה ואי-תפקוד בלוטות מיבומיאן.
+        כל הטיפולים במכון מבוצעים תחת פיקוחו הצמוד וליוויו המקצועי, המבטיחים רמת בטיחות ודיוק קלינית מהגבוהות בתחום.
+        הצוות הרפואי עובד בשיטות מבוססות-ראיות עם פרוטוקולים עדכניים בתחום MGD.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="contact" class="cta-section">
+  <h2>מוכנים להתחיל?</h2>
+  <p>קבעו תור לייעוץ ובדיקה ראשונית עם הצוות של פרופ' אחירון.<br>ונתחיל יחד את הדרך לעיניים נוחות ובריאות.</p>
+  <a href="tel:055-9992720" class="btn-white">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path d="M3 3h4l1.5 3.5-2 1.5a10 10 0 005.5 5.5l1.5-2L17 13v4a1 1 0 01-1 1C7 18 0 11 0 3a1 1 0 011-1h2v1z" fill="currentColor" opacity="0.8"/>
+    </svg>
+    055-9992720
+  </a>
+  <p style="margin-top:1.2rem; font-size:0.88rem; color:rgba(255,255,255,0.65);">
+    לא הצלחתם להגיע אלינו? אנא השאירו הודעה קצרה עם שמכם ומספר טלפון לחזרה –<br>
+    נשמח ליצור עמכם קשר בהקדם האפשרי.
+  </p>
+</section>
+
+<footer>
+  <p>© 2025 <strong>טיפול לעין יבשה</strong> | פרופ' אסף אחירון | כל הזכויות שמורות | המידע באתר אינו מהווה תחליף לייעוץ רפואי מקצועי</p>
+</footer>
+
+</body>
+</html>
